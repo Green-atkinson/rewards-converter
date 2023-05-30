@@ -1,19 +1,20 @@
 
 // RewardValue Class - Represents correspondence btw currencies (cash, miles, etc...)
 public class RewardValue {
-    private double cashValues = 0;
-    private int milesValue = 0;
+    private final double cashValues;
+    private final int milesValue;
+    public static final double MILES_TO_CASH_CONVERSION = 0.0035;
 
-    //constructor with cash value
+    // Constructor with cash value
     public RewardValue(double cashValues) {
         this.cashValues = cashValues;
-        this.milesValue = (int) (cashValues / 0.0035);
+        this.milesValue = (int) (cashValues / MILES_TO_CASH_CONVERSION);
     }
 
-    //constructor with miles value
+    // Constructor with miles value
     public RewardValue(int milesValue) {
         this.milesValue = milesValue;
-        this.cashValues = milesValue * 0.0035;
+        this.cashValues = milesValue * MILES_TO_CASH_CONVERSION;
     }
 
     // Getter for cash value

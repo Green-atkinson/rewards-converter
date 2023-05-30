@@ -7,7 +7,7 @@ public class RewardValue {
     //constructor with cash value
     public RewardValue(double cashValues) {
         this.cashValues = cashValues;
-        this.milesValue = (int) (cashValues * 0.0035);
+        this.milesValue = (int) (cashValues / 0.0035);
     }
 
     //constructor with miles value
